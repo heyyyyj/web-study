@@ -1,0 +1,92 @@
+
+body>main{
+    margin: 0 auto;
+    width: 108rem;
+}
+body>main>div{}
+body>main>div>h2{
+    font: bold 2.2rem 'NanumBarunGothic',sans-serif;
+    color: #1e61a8;
+}
+body>main>div>nav{}
+body>main>div>nav>h1{}
+body>main>div>nav>ul{}
+body>main>div>nav>ul>li{}
+body>main>div>nav>ul>li>a{
+    font: bold 1.35rem 'NanumBarunGothic',sans-serif;
+    color: #4a4b4b;
+}
+body>main>div>nav>ul>li>ul{}
+body>main>div>nav>ul>li>ul>li{text-indent: 1rem;}
+body>main>div>nav>ul>li>ul>li>a{
+    font: 1.2rem 'NanumBarunGothic',sans-serif;
+    color: #6b6b6b;
+}
+
+body>main>section{}
+body>main>section>header{}
+body>main>section>header>h1{
+    font: bold 1.8rem 'NanumBarunGothic',sans-serif;
+    color: #111;
+    letter-spacing: -1px;
+}
+body>main>section>header>p{
+    font: 1.1rem 'dotum',sans-serif;
+}
+body>main>section>article{}
+body>main>section>article>h4{
+    font: bold 1.6rem 'NanumBarunGothic',sans-serif;
+    color: #1e61a8;
+    letter-spacing: -0.1rem;
+}
+body>main>section>article>blockquote{
+    font: bold 2.8rem/3.6rem 'NanumBarunGothic',sans-serif;
+    color: #444;
+}
+body>main>section>article>blockquote>strong{
+    color: #1f9b0f;
+}
+body>main>section>article>p{}
+body>main>section>article>p>a{
+    color: #0024fd;
+}
+
+body>main>section>div{}
+body>main>section>div>h4{}
+body>main>section>div>table{}
+body>main>section>div>table>thead{}
+body>main>section>div>table>thead>tr{}
+body>main>section>div>table>thead>tr>th{
+    font: bold 1.3rem 'NanumBarunGothic',sans-serif;
+}
+body>main>section>div>table>tbody{}
+body>main>section>div>table>tbody>tr{}
+body>main>section>div>table>tbody>tr>th{
+    font: bold 1.3rem 'NanumBarunGothic',sans-serif;
+}
+body>main>section>div>table>tbody>tr>td{
+    font: 1.2rem dotum,sans-serif;
+}
+
+body>main>section>p{
+    font: 1.2rem/2rem dotum,gulin,sans-serif;
+}
+body>main>section>aside{}
+body>main>section>aside>h1{}
+body>main>section>aside>p{}
+
+body>footer{}
+body>footer>div{}
+body>footer>div>h2{}
+body>footer>div>p{}
+body>footer>div>div{}
+body>footer>div>div>dl{}
+body>footer>div>div>dl>dt{}
+body>footer>div>div>dl>dd{{}}
+body>footer>div>div>address{}
+body>footer>div>div>address>p{}
+body>footer>div>div>p{}
+
+#dirTop{
+    font: bold 1.4rem dotum,sans-serif;
+}
