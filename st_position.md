@@ -1,0 +1,39 @@
+# CSS-POSITION(포지션)의 특징
+요소의 위치를 바꿔주는 태그
+
+
+
+## position의 종류
+1. static
+2. relative
+3. absolute
+4. rixed
+5. z-index
+
+## 세부내용
+1. static
+- 모든 요소의 기본값(left, right 등 위치값 비활성화)
+
+2. relative
+- 자기 자신의 자리가 기준이다.
+
+
+3. absolute
+- static이 아닌 요소를 가진 부모(조상)가 기준
+> ex. relative를 가진 부모or부모의 부모 값들이 기준이 된다.→relative요소를 가진 가장 가까운 부모가 기준이 됨)
+
+- 기준점을 정하지 않으면 body가 기준이 된다.
+- float태그와 비슷한 특징
+- absolute태그를 사용하면 부모요소의 height는 줄어든다.
+
+
+4. fixed
+- 브라우저 창이 기준
+- 한 자리에 그대로 고정되어 스크롤을 움직여도 안움직임(ex. 네X버 웹툰의 리모컨 기능)
+
+
+5. z-index
+- position태그 사용시 상,하,좌,우의 값이 상송되진 않으나 부모요소에 좌,상(left, top)값이 있고 자식값에 우,하(right,bottom)값이 있다면 부모의 좌, 상 값이 우선이 됨.
+- top과 bottom, left와 right의 값은 동시에 사용하지 않는 것이 좋다.
+- 레이아웃을 전부 absolute로 하면 안됨...!!!
+  - float요소 다음에 clear 사용한 요소에 margin-top줘도 안먹음.이걸 해결하려고 absolute를 쓰는데, 본인 모니터에선 잘 될 수 있으나 다른 모니터에선 안맞기때문에 absolute쓰면 안됨!/float을 주면 부모요소 height없음.
