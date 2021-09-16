@@ -1,0 +1,20 @@
+// 일정금액을 입금하면, 이율이 5%가 되는 문장을 작성하시오. 
+// 대신 500만원까지만 5%를 지급하고 나머지 금액에 대해서는 1%의 이율을 갖도록 한다. 
+
+var money = prompt("금액을 입금하시오.");
+var rate;
+money *= 1;
+        
+if(isNaN(money)){
+  alert("숫자를 입력하시오.");
+}else{//숫자라면
+  if(money > 5000000){
+    money -= 5000000; 
+    rate = money*0.01
+    money += rate+5250000;
+  }else{
+    rate = money*0.05;
+    money += rate; 
+  }
+  alert("현재 금액은"+money);
+};
