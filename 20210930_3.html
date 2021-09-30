@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("h1").css("color","green")
+            .next().css("border","1px solid red")//.next(): 처음객체로부터 다음 객체로 객체이동
+            .next().css("background","yellow")
+            .prev().prev().css("text-decoration", "underline")//.prev: 이전 객체로 이동
+
+            .nextAll().first().css("font-style","italic")//.nextAll(): 다음 객체 전체(집합객체) || 집합객체.first(): 집합객체중 첫번째 || 집합객체.last(): 마지막
+            .nextAll("h3").css("font-size",50)//집합객체는 전달인자로 선택자를 전달하면 선택자에 해당하는 요소가 객체가 된다.
+            .prevAll().last().css("font-style","italic")//.prevAll().first()와 nextAll.first()의 first, last traversing은 기준(prevAll 또는 nestAll이 시작하는 지점)으로부터 위치(첫번째, 마지막)을 지정한다.
+            .nextAll("ul").children()//.children(): 객체의 자식요소를 선택
+            .first().find("a")//.find(): 자손선택자, 유일하게 전달인자("선택자")를 필수로 필요로한다.
+            .eq(1).css("background","green").css("color","white")
+            .parent().css("border","1px solid black")//.parent(): 부모요소 선택
+            .parents("ul").last().css("border","3px dashed black")//.parents(): 조상요소 선택
+            .siblings().first().css("background","orange")//.siblings(): prevAll과 nextAll을 합친 객체
+            .end()//.end(): 현재 객체에서 이전 객체로 돌아간다.
+            .not("h1").css("background","aqua")//.not(): 집합선택자 중에서 제외할 선택자를 사용
+            
+        });
+    </script>
+</head>
+<body>
+    <h1>메소드 체이닝(method chaining) 및 트래벌싱(traversing)</h1>
+    <p>메소드 체이닝 - jQuery객체는 javascript객체와 달리 하나의 객체가 메소드를 한번에 여러번 사용할 수 있다.</p>
+    <p>트래벌싱 - 객체를 선택한 후 다른 객체로 계속 옮겨갈 수 있다.</p>
+
+    <h2>메소드 체이닝</h2>
+    <!-- ul>li*3>a[href="#"]+ul>li*2>a[href="#"] -->
+    <ul>
+        <li>
+            <a href="#">menu-1</a>
+            <ul>
+                <li><a href="#">menu-1_1</a></li>
+                <li><a href="#">menu-1_2</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">menu-2</a>
+            <ul>
+                <li><a href="#">menu-2_1</a></li>
+                <li><a href="#">menu-2_2</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#">menu-3</a>
+            <ul>
+                <li><a href="#">menu-3_1</a></li>
+                <li><a href="#">menu-3_2</a></li>
+            </ul>
+        </li>
+    </ul>
+    <h3>트래벌싱</h3>
+    <p>이객체에서 저객체로 계속 옮겨가면서 메소드를 실행할 수 있다.</p>
+</body>
+</html>
