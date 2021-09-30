@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href=""><!-- css는 js파일보다 항상 위에 작성 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- ja파일은 나중에 작성 -->
+</head>
+<body>
+    <h1>jQuery 시작</h1>
+    <section>
+        <h1>섹셔닝요소 h1</h1>
+    </section>
+    <script>
+        //jQuery (생성자 함수 비슷함 생성자함수 공부하세요.!!!!)
+        //javascript를 css스타일링을 했던 사람이 사용하기 좀 더 편하도록 작성된 javascript API(javascript library)
+        //jQuery는 javascript를 변경한 객체
+
+        //1. 상단에 jQuery객체를 연결
+        //1-1. 직접 객체를 다운로드해서 연결
+        //1-2. CDN 방식: 웹상에 존재하는 소스와 연결
+
+        //1. jQuery객체
+        //1-1. $ == jQuery(최상위 jQuery객체)
+        //1-2. jQuery("선택자") === $("선택자") jQuery 인스턴스 객체
+
+        $("h1").eq(1)//==jQuery("h1") || h1요소가 jQuery요소 객체로 변환
+                     //{jQuery요소객체-->$('선택자')}여러개 존재하면(집합객체) 이들 중 하나를 선택할 때는 jQuery집합객체.eq(index)를 사용하면, index에 해당하는 요소객체를 선택할 수 있다.
+        $("h1").css("color","red");//메소드 css("속성","값")속성을 값으로 세팅한다
+        $("h1").eq(0).css("border","1px solid green");
+
+        $("h1").click(function(){
+            $(this).css("color","black") //this가 javascript라서 jQuery로 바꾸기 위해 앞에 $ 붙여줌
+        })
+        
+    </script>
+</body>
+</html>
