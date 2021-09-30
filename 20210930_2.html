@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/test.js"></script> <!-- jQuety연결소스 아래에 붙여넣기 -->
+    <script>
+        //jQuery작성문을 html과 구분해서 head쪽에 작성하고 싶다면, $(function(){jQuery 실행문});
+        $(function(){ //$(fn) callback함수인 fn은 <body>태그 내부를 전부 읽은 이후에 실행 - ※용량이 큰 이미지는 읽는데 오래걸림.
+            $("h1").css("color","red"); //test.js에 있는 것 보다 적용 우선순위.
+            
+            
+            
+            //body에 관련된 모든 실행문 여기에 작성하면 됨.
+
+
+
+        });
+    </script>
+</head>
+<body>
+    <h1>제이쿼리</h1>
+</body>
+</html>
