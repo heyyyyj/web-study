@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //요소 이동
+            
+            //---------------------------------------------------------------------------------------------------
+
+            //append || appendTo 이미 존재하는 요소에 마지막 요소로 더해지는 것.
+            //$("<요소>자식요소 또는 text</요소>"); -->요소를 생성
+            //jQuery요소객채.appendTo(원하는 부모jQuery요소객체 || 문자열 요소);
+            //부모jQuery요소객체.append(원하는 jQuery요소객체 || 문자열 요소);
+
+            // $("li").first().appendTo($("ul"));
+            // ==
+            // $("ul").append($("li").first() );
+            //$("ul>li").first().append("<span>안녕?</span>")
+
+            //---------------------------------------------------------------------------------------------------
+
+            //prepend || prependTo 이미 존재하는 요소에 첫 번째 요소로 더해지는 것.
+            //jQuery요소객체.prpendTo(원하는 부모jQuery요소객체 || 문자열 요소);
+            //부모jQuery요소객체.prepend(원하는 jQuery요소객체 || 문자열 요소);
+
+            // $("li").alst().prependTo($("ul"));
+            // ==
+            // $("ul").prepend($("li").last() );
+            // $("ul>li").first().prepend("<span>안녕!</span>")
+
+            //---------------------------------------------------------------------------------------------------
+
+            //jQuery요소객체.before(이동할요소): 전달인자를 요소객체 앞으로 이동
+            //jQuery요소객체.after(이동할요소): 전달인자를 요소객체 뒤로 이동
+            //jQuery요소객체.before(원하는 형제jQuery요소객체 || 문자열 요소);
+            //jQuery요소객체.after(원하는 형제jQuery요소객체 || 문자열 요소);
+
+            // $("h1").before($("p").first());
+            // $("h1").before($("<p>만들어진 요소가 앞으로 이동</p>")); //before안에 $ 없어도 작동 됨
+            // $("p").last().after( $("h1") );
+            // $("p").last().after( $("<p>새롭게 만들어진 요소가 마지막으로 이동</p>") );
+
+            //---------------------------------------------------------------------------------------------------
+
+            //문제
+            //1. #btnPrev를 클릭하면 li중 마지막 li가 첫번째로 이동
+            //2. #btnNext를 클리하면 li중 첫 번째 li가 마지막으로 이동
+
+            //이벤트
+            //jQuery요소객체.이벤트명(function(){이벤트 발생시 실행될 구문});
+            //ex> $("h1").click(function(){ $(this).css("color","red") });
+
+            //이전으로 이동을 클릭하면, 첫 번째 li만 배경색 빨강, color 흰색, 나머지 li요소들 배경색 흰색, color 검정
+            //다음으로 이동을 클릭하면, 마지막 li만 배경색 빨강, color 흰색, 나머지 li요소들 배경색 흰색, color 검정
+
+            $("#btnPrev").click(function(){
+                // $("ul").children("li").last().prependTo($("ul"));
+                //==$("ul").prepend($("ul").children("li").last);
+                $("ul").children("li").first().after($("ul").children("li").last());
+
+                $("ul").children("li").first().css({"background-color":"red","color":"white"})
+                .nextAll().css({"background-color":"white","color":"black"});
+            });
+
+            $("#btnNext").click(function(){
+                //$("ul").children("li").first().appendTo($("ul"));
+                //==$("ul").append($("ul").children("li").first);
+                $("ul").children("li").last().after($("ul").children("li").first());
+
+                $("ul").children("li").last().css({"background-color":"red","color":"white"})
+                .PrevAll().css({"background-color":"white","color":"black"});
+            });
+
+            //---------------------------------------------------------------------------------------------------
+
+        });
+    </script>
+</head>
+<body>
+    <h1 id="tit">jQuery의 요소 이동하기</h1>
+    <ul>
+        <li>aaaa</li>
+        <li>bbbb</li>
+        <li>cccc</li>
+        <li>dddd</li>
+        <li>eeee</li>
+    </ul>
+    <p id="btnPrev">이전으로 이동</p>
+    <p id="btnNext">다음으로 이동</p>
+</body>
+</html>
