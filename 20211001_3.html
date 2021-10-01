@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //html요소를 삭제
+            //jQuery요소객체.remove(); jQuery요소객체가 삭제된다. - setter
+            //jQuery요소객체.empty(); jQuery요소객체의 자식요소를 삭제한다.
+
+            // $("h1").click(function(){
+            //     //h1을 클릭하면 ul의 마지막 li요소를 삭제한다.
+            //     //$("ul>li").last().remove();
+
+            //     //ul의 li자식요소를 없앤다.
+            //     $("ul").empty();
+            // });
+
+            //---------------------------------------------------------------------------------------------------
+
+            //li요소 중에서 원하는 li를 클릭하면 그 요소를 삭제하고, 삭제된 li의 글자를 div안에 계속 나열하시오.
+            $("li").click(function(){
+                var tmpTxt=$(this).text();
+                $(this).remove();
+                $("div").append("<span>"+tmpTxt+", </span>");
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>요소 삭제</h1>
+    <ul>
+        <li>AAA</li>
+        <li>BBB</li>
+        <li>CCC</li>
+        <li>DDD</li>
+        <li>EEE</li>
+    </ul>
+    <div>
+
+    </div>
+</body>
+</html>
