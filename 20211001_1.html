@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(function(){
+            //each()
+            //1. jQuery.each(객체or배열, function(속성, 값){반복실행문});
+            //  ex> var o={x:1, y:2}
+            //  jQuery.each(o.function(p, v){alert(p+"/"+v);});
+            //  var arr=[5, 10, 30]
+            //  jQuery.each(o.function(i, v){alert(i+"/"+v);});
+
+            //2. jQuery("집합객").each();
+
+            // var arr=[5, 10, 30]
+            // var obj={color:"green", height:300, width:200}
+            // $.each(arr, function(i,v){ //첫번째 전달인자는 속성, 두번째 전달인자는 값
+            //     alert(i+"/"+v);
+            // });
+
+
+            // $("ul>li").each(function(a,b){
+            //     // console.log(a+"/"+b);
+            //     //$(b) ->jQuety객체로 바꿔준 것. || $("li").eq(a)
+            //     console.log($(b).text());
+            // });
+
+            //li들의 색상을 다르게 변경하시오.
+            //$("ul>li").css("color","red") ->색상을 한번에 변경
+            // var colors=['red','blue','green','yellow','orange']
+
+            // $("ul>li").each(function(a,b){ //a는 속성(번지수), b(집합객체의 각 해당 값)
+            //     $(b).css("color",colors[a])//[a]가 바뀌는 아이
+            // });
+            
+            //li들의 색상을 랜덤으로 변경
+            // $("ul>li").each(function(a,b){
+            //     var rgb=[]
+
+            //     for(let i=0; i<3; i++){
+            //     rgb.push(parseInt(Math.random()*256) );//Math.random()-->0~0.999999999999-->최대숫자 255.99999999
+            //     }                                      //parseInt(실수)-->정수
+
+            //     $(b).css("color","rgb("+rgb.join()+")");//setter
+            // })
+
+            //li들의 배경색상을 그라데이션으로
+            var red=255;
+            $("ul>li").each(function(a,b){
+                $(b).css({"color":"white","background-color":"rgb("+red+",0,0)"});//(0,"+green+",0) || (0,0,"+blue+") 
+                red-=20;
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery의 반복문</h1>
+    <ul>
+        <li>aaaa</li> <!-- 이 자체가 value -->
+        <li>bbbb</li>
+        <li>cccc</li>
+        <li>dddd</li>
+        <li>eeee</li>
+    </ul>
+</body>
+</html>
